@@ -107,14 +107,7 @@ html {
     scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-}
 
-body {
-    overflow-x: hidden;
-}
 .hiring-form::-webkit-scrollbar {
     width: 0px;
     height: 0px;
