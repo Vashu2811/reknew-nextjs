@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
+/* Base theme styles */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 255, 244, 240; /* #FFF4F0 */
+  --foreground: 17, 24, 39; /* #111827 */
+  
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: 17, 24, 39; /* #111827 */
+  --foreground: 243, 244, 246; /* #F3F4F6 */
+  color: var(--color-gray-800)
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.preloader {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-out !important;
+  z-index: 9999;
+  visibility: visible;
+}
+.preloader img {
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+html.lenis {
+    height: auto;
+}
+::selection {
+    color: #fff;
+    background: #ff522fd6;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #ff522fd6;
+}
+.preloader {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out !important;
+    z-index: 9999;
+    visibility: visible;
+}
+.preloader img {
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+body {
+    overflow-x: hidden;
+}
+.hiring-form::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+.hiring-form {
+    overflow-x: hidden;
+}
+
+.custom-toast {
+    background-color: white !important;
+    color: #ff512f !important;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-toast-body {
+    font-size: 14px;
+}
+
+.custom-toast-progress {
+    background: #ff512f !important;
+}
+
+.custom-toast .Toastify__toast-icon svg {
+    fill: #32ff2f !important;
 }
